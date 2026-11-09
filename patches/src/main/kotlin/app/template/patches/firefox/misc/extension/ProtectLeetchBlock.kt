@@ -51,7 +51,7 @@ val protectLeechBlockPatch = bytecodePatch(
                 new-instance v0, Ljava/lang/UnsupportedOperationException;
                 const-string v1, "LeechBlock is protected"
                 invoke-direct { v0, v1 }, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-                invoke-virtual { p4, v0 }, Lmozilla/components/feature/addons/AddonManager$$ExternalSyntheticLambda5;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+                invoke-virtual { p4, v0 }, Lmozilla/components/feature/addons/AddonManager${'$'}${'$'}ExternalSyntheticLambda5;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
                 return-void
 
                 :leechblock_disable_continue
@@ -71,7 +71,7 @@ val protectLeechBlockPatch = bytecodePatch(
                 new-instance v2, Ljava/lang/UnsupportedOperationException;
                 const-string v1, "LeechBlock is protected"
                 invoke-direct { v2, v1 }, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-                invoke-virtual { p3, v0, v2 }, Lmozilla/components/feature/addons/AddonManager\$\$ExternalSyntheticLambda11;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+                invoke-virtual { p3, v0, v2 }, Lmozilla/components/feature/addons/AddonManager${'$'}${'$'}ExternalSyntheticLambda11;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
                 return-void
 
                 :leechblock_uninstall_continue
