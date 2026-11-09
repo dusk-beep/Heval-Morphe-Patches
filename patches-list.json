@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "2.2.0",
+  "version": "1.0.0",
   "patches": [
     {
       "name": "Add-on support",
@@ -312,12 +312,7 @@
           "required": true,
           "type": "kotlin.String",
           "default": "https://doh.cleanbrowsing.org/doh/family-filter/",
-          "values": {
-            "CleanBrowsing Family": "https://doh.cleanbrowsing.org/doh/family-filter/",
-            "CleanBrowsing Adult": "https://doh.cleanbrowsing.org/doh/adult-filter/",
-            "Cloudflare for Families": "https://family.cloudflare-dns.com/dns-query",
-            "AdGuard Family": "https://family.adguard-dns.com/dns-query"
-          }
+          "values": null
         },
         {
           "key": "dohMode",
@@ -371,12 +366,7 @@
           "required": true,
           "type": "kotlin.String",
           "default": "https://doh.cleanbrowsing.org/doh/family-filter/",
-          "values": {
-            "CleanBrowsing Family": "https://doh.cleanbrowsing.org/doh/family-filter/",
-            "CleanBrowsing Adult": "https://doh.cleanbrowsing.org/doh/adult-filter/",
-            "Cloudflare for Families": "https://family.cloudflare-dns.com/dns-query",
-            "AdGuard Family": "https://family.adguard-dns.com/dns-query"
-          }
+          "values": null
         },
         {
           "key": "dohMode",
@@ -432,12 +422,7 @@
           "required": true,
           "type": "kotlin.String",
           "default": "https://doh.cleanbrowsing.org/doh/family-filter/",
-          "values": {
-            "CleanBrowsing Family": "https://doh.cleanbrowsing.org/doh/family-filter/",
-            "CleanBrowsing Adult": "https://doh.cleanbrowsing.org/doh/adult-filter/",
-            "Cloudflare for Families": "https://family.cloudflare-dns.com/dns-query",
-            "AdGuard Family": "https://family.adguard-dns.com/dns-query"
-          }
+          "values": null
         },
         {
           "key": "dohMode",
