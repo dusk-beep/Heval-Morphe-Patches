@@ -3,6 +3,7 @@ package app.template.patches.firefox.misc.extension
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.extensions.InstructionExtensions.cloneParameters
 
 @Suppress("unused")
 val protectLeechBlockPatch = bytecodePatch(
@@ -30,11 +31,11 @@ val protectLeechBlockPatch = bytecodePatch(
 
         // Add two local registers to each method.
         disableMethod.implementation?.let {
-            it.registerCount += 2
+          disableMethod.cloneParameters()
         } ?: throw PatchException("disableWebExtension has no implementation")
 
         uninstallMethod.implementation?.let {
-            it.registerCount += 2
+          uninstallMethod.cloneParameters()
         } ?: throw PatchException("uninstallWebExtension has no implementation")
 
         // Block disabling LeechBlock.
@@ -70,7 +71,7 @@ val protectLeechBlockPatch = bytecodePatch(
                 new-instance v2, Ljava/lang/UnsupportedOperationException;
                 const-string v1, "LeechBlock is protected"
                 invoke-direct { v2, v1 }, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-                invoke-virtual { p3, v0, v2 }, Lmozilla/components/feature/addons/AddonManager$$ExternalSyntheticLambda11;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+                invoke-virtual { p3, v0, v2 }, Lmozilla/components/feature/addons/AddonManager\$\$ExternalSyntheticLambda11;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
                 return-void
 
                 :leechblock_uninstall_continue
