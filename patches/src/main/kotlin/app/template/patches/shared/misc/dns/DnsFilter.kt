@@ -19,15 +19,6 @@ internal const val DOH_MODE_FALLBACK = "fallback"
 private const val DEFAULT_DOH_URL = "https://doh.cleanbrowsing.org/doh/family-filter/"
 private const val MAX_DOH_URL_LENGTH = 512
 
-// Every preset answered an RFC 8484 query over GET and POST with 200 application/dns-message
-// (curl, 2026-11-03).
-private val DOH_PRESETS = mapOf(
-    "CleanBrowsing Family" to DEFAULT_DOH_URL,
-    "CleanBrowsing Adult" to "https://doh.cleanbrowsing.org/doh/adult-filter/",
-    "Cloudflare for Families" to "https://family.cloudflare-dns.com/dns-query",
-    "AdGuard Family" to "https://family.adguard-dns.com/dns-query",
-)
-
 /**
  * True for an absolute https URL with a host and nothing that would need escaping in smali or
  * break a browser's template parsing: printable ASCII only (no whitespace), no quote, backslash,
@@ -65,7 +56,6 @@ internal fun PatchBuilder<*>.dnsFilterOptions() = DnsFilterOptions(
     urlOption = stringOption(
         key = "dohUrl",
         default = DEFAULT_DOH_URL,
-        values = DOH_PRESETS,
         title = "DNS-over-HTTPS resolver",
         description = "The https address of the DNS-over-HTTPS resolver the browser must use.",
         required = true,
